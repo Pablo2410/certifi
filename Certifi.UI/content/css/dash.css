@@ -1,0 +1,338 @@
+﻿body {
+    position: relative;
+}
+
+#side-nav li.level-1 {
+    font-size: 18px;
+    line-height: 40px;
+    background: #f8f8f8;
+    border-radius: 7px;
+    border: 2px solid #dedede;
+    margin-bottom: 7px;
+}
+
+#side-nav li.level-1.is-empty {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+#side-nav li.level-1 > a {
+    color: #999999;
+    padding-left: 25px;
+}
+
+#side-nav li.level-1 > a:hover,
+#side-nav li.level-1.active > a {
+    color: #009999;
+    background: #EBE9EA;
+}
+
+#side-nav li.level-1 > a > .glyphicon,
+#side-nav li.level-1 > a > .badge2 {
+    float: right;
+    margin-top: 10px;
+    margin-left: 6px;
+}
+
+#side-nav li.level-1 > a:hover > .glyphicon-ok:before {
+    content: "\002b";
+}
+
+#side-nav li.level-1 > a > .badge {
+    font-size: 15px;
+}
+
+#side-nav li.level-1 .nav-container {
+    display: none;
+    overflow: auto;
+}
+
+#side-nav li.level-1.active .nav-container {
+    display: block;
+}
+
+#side-nav li.level-2 {
+    margin-left: 23px;
+}
+
+#side-nav li.level-2:before {
+    content: "»";
+    display: block;
+    float: left;
+    color: #999;
+    margin-top: -3px;
+}
+
+#side-nav li.level-2 > a {
+    font-size: 15px;
+    color: #999;
+    line-height: 20px;
+    padding: 8px 15px;
+}
+
+#side-nav li.level-3 {
+    line-height: 8px;
+}
+
+/*#side-nav li.level-3.notify {
+    font-weight: bold;
+}*/
+
+/*#side-nav li.level-3.active {
+    border-left: 2px solid #009999; 
+    background: rgba(0, 153, 153, 0.1);
+}
+
+#side-nav li.level-3:not(.active):hover {
+    border-left: 2px solid rgba(0, 153, 153, 0.6); 
+}*/
+
+/*#side-nav li.level-3.notify:not(.active):before {
+    content: "•";
+    display: block;
+    float: left;
+    color: #f89406;
+    margin-top: 10px;
+    margin-left: 5px;
+}*/
+
+#side-nav li.level-3 > a {
+    line-height: 18px;
+    margin-left: 5px;
+    color: #999;
+    font-size: 14px;
+    padding: 5px 15px;
+}
+
+/*#side-nav li.level-3 > a:hover {
+    background: none;
+}
+
+#side-nav li.level-3.active > a,
+#side-nav li.level-3.active:hover > a {
+    padding-left: 12px;
+}*/
+
+
+#side-nav li.level-4 {
+    line-height: 8px;
+}
+
+#side-nav li.level-4.active {
+    border-left: 2px solid #009999; 
+    background: rgba(0, 153, 153, 0.1);
+}
+
+#side-nav li.level-4:not(.active):hover {
+    border-left: 2px solid rgba(0, 153, 153, 0.6); 
+}
+
+#side-nav li.level-4 > a {
+    line-height: 18px;
+    margin-left: 15px;
+    color: #999;
+    font-size: 12px;
+    padding: 5px 15px;
+}
+
+#side-nav li.level-4 > a:hover {
+    background: none;
+}
+
+#side-nav li.level-4.active > a,
+#side-nav li.level-4.active:hover > a {
+    padding-left: 16px;
+}
+
+/* ################## RHS ################### */
+
+.req-wrapper .bread {
+    position: absolute;
+    top: -18px;
+    color: #ccc;
+}
+
+.req-wrapper {
+    color: #666;
+    margin-left: 14px;
+    line-height: 44px;
+    height: 90px;
+}
+
+.req-wrapper>span {
+    font-size: 18px;
+    margin-right: 10px;
+    vertical-align: text-bottom;
+    display: none;
+}
+
+.req-wrapper .actions {
+    position: absolute;
+    font-size: 12px;
+    color: #ccc;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+    /* margin-top: 5px; */
+    cursor: pointer;
+    top: 8px;
+    right: 37px;
+}
+
+.req-wrapper .actions .glyphicon {
+    font-size: 34px;
+    vertical-align: middle;
+    margin-top: -5px;
+    color: #999;
+}
+
+.req-wrapper .actions.done,
+.req-wrapper .actions.done .glyphicon {
+    color: rgba(60, 118, 65, 0.5);
+}
+
+.req-wrapper .expander {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    line-height: 12px;
+    font-size: 12px;
+    color: #aaa;
+    text-align: center;
+    cursor: pointer;
+}
+
+.req-wrapper .extended {
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.req-wrapper .extended .glyphicon {
+    display: block;
+    font-size: 40px;
+    padding: 5px;
+
+}
+
+.req-page {
+    margin-top: 15px;
+    margin-bottom: 20%;
+}
+
+.req-page:after {
+    content: "";
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, rgba(242, 248, 250, 0), rgba(242, 248, 250, 1) 90%);
+    width: 66%;
+    height: 25%;
+}
+
+.req-page h2 {
+    color: #999;
+    font-family: "Arial Black","Arial","Avenir-Black";
+    margin: 10px 0 0;
+}
+
+.req-page h3 {
+    color: #009999;
+    margin-bottom: 15px;
+}
+
+.req-page h4 {
+    color: #009999;
+    margin: 0 0 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.req-page .container-fluid {
+    border: 1px solid #DDD;
+    border-radius: 7px;
+    background-color: #fdfdfd;
+    padding: 18px 15px;
+    margin-bottom: 20px;
+}
+
+.req-page .container-fluid.active {
+    border-left: 5px solid #009999;
+    padding-left: 11px;
+    background: #fff;
+}
+
+iframe, embed {
+    width:100%;
+    height:500px;
+}
+
+/* *************** */
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card:hover .scroll-fade {
+    opacity: 0;
+    transition: opacity .4s;
+}
+
+.card:hover .scroll-fade {
+    opacity: 1 !important;
+}
+
+/* Add some padding inside the card container */
+.card > .content {
+    padding: 2px 16px;
+    position: relative;
+}
+
+/* *************** */
+
+.left-nav {
+    background: #ebe9ea;
+    margin: 15px 15px 0 -15px;
+    border-radius: 0 5px;
+    padding: 10px 0 10px 15px;
+    position:fixed;
+    left:0;
+    bottom:0;
+    top: 60px;
+}
+
+.left-nav .left-nav-item {
+    text-align: center;
+    margin: 15px;
+    border-radius: 5px;
+    background: #FFF;
+    color: #666;
+    padding: 10px;
+    cursor: pointer;
+    border: 2px solid #dedede;
+}
+
+.left-nav .left-nav-item:not(.active):not(:hover) .glyphicon {
+    color: #b7b7b7;
+}
+
+.left-nav .left-nav-item.active,
+.left-nav .left-nav-item:hover {
+    background: #009999;
+    color: #fff;
+}
+
+.left-nav .left-nav-item span {
+    display: block;
+    font-size: 34px;
+}

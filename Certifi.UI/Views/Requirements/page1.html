@@ -1,0 +1,238 @@
+﻿@Master['master']
+
+@Section['Head']
+
+    <!-- Custom styles for this template -->
+    <link href="/content/css/requirements.css" rel="stylesheet">
+
+@EndSection
+
+@Section['Content']
+
+    <div class="container-fluid" style="
+        background: #009999;
+        color: white;
+        padding: 0 0 7px 51px;
+        font-weight: bold;">
+        <h3 style='
+    font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -1px;'>
+            Determine Compliance
+        </h3>
+    </div>
+    
+    <br/>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="color: #FF6600">
+                <h4>Step 1 of 2</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 style="color:#009999; margin-bottom: 0;">You're on your way!</h2>
+                <h5 class="text-muted" style="padding: 6px 6px 18px; line-height: 1.3">
+                    We are going to ask a few key questions to understand your compliance obligations. Please answer all questions accurately and in full. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis, odio et congue mattis, tortor lacus ultrices sem, et aliquet orci ex vel neque.
+                </h5>
+            </div>
+        </div>
+    </div>
+        
+<form>
+    <div id="questions" class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 style="color:#009999; padding-left: 12px;">About your company</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 text-right"><label>Do you know the company number?</label></div>
+            <div class="col-md-6 btn-group">
+                <button type="button" class="btn btn-default btn-toggle active" id="know-company">Yes</button>
+                <button type="button" class="btn btn-default btn-toggle" id="do-not-know-company">No</button>
+            </div>
+        </div>
+
+        <div class="row company_no_container">
+            <div class="col-md-6 text-right"><label>What's your company number?</label></div>
+            <div class="col-md-6 btn-group">
+                <input type="text" class="form-control" id="company_no" placeholder="company number" autocomplete="off" />
+            </div>
+        </div>
+
+        <div class="row company_no_container" style="margin-top: -12px;">
+            <div class="col-md-6"></div>
+            <div class="col-md-6 btn-group">
+                <button type="button" class="btn btn-default submit">Find company ></button>
+            </div>
+        </div>
+        
+        <div class="row company_details_container">
+            <div class="col-md-6 text-right"><label>Your company</label></div>
+            <div class="col-md-6">
+                <div id="company_details" style="white-space: pre-wrap; margin-top: 7px;"></div>
+                <button type="button" class="btn btn-link" id="change_details">change details</button>
+            </div>
+        </div>
+
+        <div class="row company_manual_container">
+            <div class="col-md-6 text-right"><label>What's your company name?</label></div>
+            <div class="col-md-6 btn-group">
+                <input type="text" class="form-control" id="company_name" placeholder="company name" />
+            </div>
+        </div>
+
+        <div class="row company_manual_container">
+            <div class="col-md-6 text-right"><label>What's your company's site location?</label></div>
+            <div class="col-md-6 btn-group">
+                <input type="text" class="form-control" id="site_location" placeholder="site location" />
+            </div>
+        </div>
+
+        <div class="row company_manual_container">
+            <div class="col-md-6 text-right"><label>What's your company's status?</label></div>
+            <div class="col-md-6 btn-group">
+                <input type="text" class="form-control" id="status" placeholder="status" />
+            </div>
+        </div>
+
+    </div>
+
+</form>
+
+<br />
+<br />
+
+    <div id="questions" class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 style="color:#009999; padding-left: 12px;">About your business</h3>
+            </div>
+        </div>
+
+        <div class="row nature_1_container">
+            <div class="col-md-6 text-right"><label>What's the nature of your business?</label></div>
+            <div class="col-md-6 btn-group">
+                <select class="form-control nature_q1">
+                    <option value="">Make a selection</option>
+                    <option value="1">Nature 1</option>
+                    <option value="2">Nature 2</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row nature_1_container">
+            <div class="col-md-6"></div>
+            <div class="col-md-6 btn-group">
+                <select class="form-control nature_q2" disabled="disabled">
+                    <option value="">Make a selection</option>
+                    <option value="1">SIC1</option>
+                    <option value="2">SIC2</option>
+                </select>
+                <button type="button" class="btn btn-link add_nature" style="display:none">add another</button>
+            </div>
+        </div>
+
+        <div class="row nature_2_container">
+            <div class="col-md-6 text-right"><label>Also:</label></div>
+            <div class="col-md-6 btn-group">
+                <select class="form-control nature_q1">
+                    <option value="">Make a selection</option>
+                    <option value="1">Nature 1</option>
+                    <option value="2">Nature 2</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row nature_2_container">
+            <div class="col-md-6"></div>
+            <div class="col-md-6 btn-group">
+                <select class="form-control nature_q2" disabled="disabled">
+                    <option value="">Make a selection</option>
+                    <option value="1">SIC1</option>
+                    <option value="2">SIC2</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-md-offset-7">
+                <a href="/discharge/dash" class="btn btn-success continue-btn">Continue to step 2 <span class="glyphicon glyphicon glyphicon-menu-right"></span></a>
+            </div>
+        </div>
+    </div>
+
+    <footer></footer>
+
+
+@EndSection
+
+@Section['Script']
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $("#questions button.btn-toggle").on("click", function () {
+            $("#questions button").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        $("#questions button.submit").on("click", function () {
+
+            $.get("/api/company/" + $("#company_no").val(), {}, function (data) {
+
+                $(".company_no_container").hide();
+
+                $(".company_details_container").show();
+
+                $("#company_details").text(data.name + '\n' + data.siteLocation + '\n' + data.status);
+
+                $("#company_name").val(data.name);
+                $("#site_location").val(data.siteLocation);
+                $("#status").val(data.status);
+            });
+
+        });
+
+        $("#know-company").on("click", function () {
+            $(".company_no_container").show();
+            $(".company_manual_container, company_details_container").hide();
+        });
+        $("#do-not-know-company").on("click", function () {
+            $(".company_manual_container").show();
+            $(".company_no_container, .company_details_container").hide();
+        });
+
+        $("#change_details").on("click", function () {
+            $("#do-not-know-company").click();
+        });
+
+        $(".nature_q1").eq(0).on("change", function () {
+            $(".nature_q2").eq(0).removeAttr("disabled");
+        });
+
+        $(".nature_q2").eq(0).on("change", function () {
+            $(".add_nature").eq(0).show();
+        });
+
+        $(".add_nature").on("click", function () {
+            $(this).hide();
+            $(".nature_2_container").show();
+        });
+
+    });
+
+</script>
+
+@EndSection

@@ -1,0 +1,13 @@
+﻿
+<div class="nav-container nano">
+    <ul class="nav nano-content-XX">
+        @Each.Topics
+        <li class="level-2">
+            <a href="#">@Current.Name</a>
+
+            @Partial['dash-groups', Current]
+
+        </li>
+        @EndEach
+    </ul>
+</div>

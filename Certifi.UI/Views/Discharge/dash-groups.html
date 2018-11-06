@@ -1,0 +1,10 @@
+﻿
+<ul class="nav">
+    @Each.Groups
+    <li class="level-3 notify2">
+        <a href="#">@Current.Name</a>
+
+        @Partial['dash-requirements', Current]
+    </li>
+    @EndEach
+</ul>

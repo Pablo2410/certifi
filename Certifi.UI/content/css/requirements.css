@@ -1,0 +1,84 @@
+﻿
+#questions {
+    background: white;
+    padding: 2px 14px 14px;
+    border: #eee 1px solid;
+    border-radius: 4px 4px 0 0;
+}
+
+#questions > .row {
+    margin: 25px 0;
+}
+
+#questions input[type='text'] {
+    width: 356px;
+}
+
+#questions button {
+    min-width: 173px;
+    font-weight: bold;
+}
+
+#questions button.submit {
+    background: #e4f7fd;
+    border-radius: 20px;
+    width: 356px;
+    color: #269abc;
+}
+
+#questions button.active {
+    background-color: #269abc;
+    color: white;
+}
+
+#questions .btn-link {
+    text-align: left;
+    padding-left: 0;
+}
+
+#questions button ~ button {
+    margin-left: 10px;
+}
+
+#questions .btn-default {
+    color: #566266;
+    background-color: #ebf0f2;
+    border-color: #c6cacc;
+}
+
+.company_details_container, .company_manual_container, .nature_2_container {
+    display: none;
+}
+
+#questions .company_manual_container ~ .company_manual_container {
+    margin-top: -10px;
+}
+
+#questions .nature_1_container ~ .nature_1_container,
+#questions .nature_2_container ~ .nature_2_container {
+    margin-top: -10px;
+}
+
+#questions .btn-default:focus,
+#questions .btn-default:hover,
+#questions .btn-default.active.focus,
+#questions .btn-default.active:focus, 
+#questions .btn-default.active:hover, 
+#questions .btn-default:active.focus, 
+#questions .btn-default:active:focus, 
+#questions .btn-default:active:hover 
+{
+    color: #fff;
+    background-color: #269abc;
+    border-color: #1b6d85;
+}
+
+.continue-btn {
+    margin-top: 65px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+    letter-spacing: -1px;
+    border-radius: 21px;
+    padding: 8px 18px;
+}

@@ -1,0 +1,17 @@
+﻿
+#action-panel .bg {
+    background: url('../img/cover.jpg') no-repeat center center fixed;
+    position: fixed;
+    width: 0;
+    height: 0;
+    padding: 50vh 50vw;
+    background-size: cover;
+}
+
+#action-panel .panel-inner {
+    box-shadow: 0 2px 9px 0 rgba(30,33,36,.8);
+    border-radius: 2px;
+    background: #fff;
+    margin: calc(50vh - 114px) 40px 0;
+    padding: 20px 0 47px;
+}

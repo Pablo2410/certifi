@@ -1,0 +1,112 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="content\css\main.css" />
+    <None Remove="content\css\nanoscroller.css" />
+    <None Remove="content\fonts\glyphicons-halflings-regular.eot" />
+    <None Remove="content\fonts\glyphicons-halflings-regular.svg" />
+    <None Remove="content\fonts\glyphicons-halflings-regular.ttf" />
+    <None Remove="content\fonts\glyphicons-halflings-regular.woff" />
+    <None Remove="content\fonts\glyphicons-halflings-regular.woff2" />
+    <None Remove="content\img\cirtifi-logo.png" />
+    <None Remove="content\img\cover.jpg" />
+    <None Remove="content\scripts\jquery-3.3.1.min.js" />
+    <None Remove="content\scripts\jquery.nanoscroller.min.js" />
+    <None Remove="content\theme\bootstrap.min.css" />
+    <None Remove="Views\Home\main.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="content\css\base.css" />
+    <Content Include="content\css\dash.css" />
+    <Content Include="content\css\nanoscroller.css" />
+    <Content Include="content\css\requirements.css" />
+    <Content Include="content\css\main.css" />
+    <Content Include="content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="content\img\cirtifi-logo.png" />
+    <Content Include="content\img\cover.jpg" />
+    <Content Include="content\scripts\jquery-3.3.1.min.js" />
+    <Content Include="content\scripts\jquery.nanoscroller.min.js" />
+    <Content Include="content\theme\bootstrap.min.js" />
+    <Content Include="content\theme\bootstrap.min.css" />
+    <Content Include="Views\Discharge\dash-guidance.html" />
+    <Content Include="Views\Discharge\dash-requirements.html" />
+    <Content Include="Views\Discharge\dash-groups.html" />
+    <Content Include="Views\Discharge\dash-legislation.html" />
+    <Content Include="Views\Discharge\dash-topics.html" />
+    <Content Include="Views\Discharge\dash.html" />
+    <Content Include="Views\Home\main.html">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\master.html" />
+    <Content Include="Views\Requirements\page1.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="content\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <Content Update="Views\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Owin" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
+    <PackageReference Include="Nancy" Version="2.0.0-barneyrubble" />
+    <PackageReference Include="NPoco" Version="3.9.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
+    <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="content\css\base.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="content\css\dash.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="content\css\nanoscroller.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="content\css\requirements.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="content\scripts\jquery.nanoscroller.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\Discharge\dash-guidance.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\Discharge\dash-requirements.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\Discharge\dash-groups.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\Discharge\dash-legislation.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\Discharge\dash-topics.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\Discharge\dash.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\master.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\Requirements\page1.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

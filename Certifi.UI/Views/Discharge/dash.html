@@ -1,0 +1,220 @@
+﻿@Master['master']
+
+@Section['Head']
+
+    <!-- Custom styles for this template -->
+    <link href="/content/css/dash.css" rel="stylesheet">
+
+@EndSection
+
+@Section['Content']
+
+    <div class="container-fluid">
+        <!-- Side Nav 1 -->
+        <div class="col-md-1 left-nav">
+            <div class="left-nav-item" onclick="document.location='/requirements/page1'">
+                <span class="glyphicon glyphicon-question-sign"></span>
+                Questions
+            </div>
+
+            <div class="left-nav-item active">
+                <span class="glyphicon glyphicon-check"></span>
+                Discharge
+            </div>
+        </div>
+        
+
+        <div class="col-md-1">
+            <!-- placeholder -->
+        </div>
+        
+        <!-- Side Nav 2 -->
+        <div class="col-md-4">
+
+            <ul id="side-nav" class="nav hidden-xs hidden-sm" style="padding-top: 15px;">
+                @Each.Areas
+                <li class="level-1 @If.IsEmpty is-empty @EndIf ">
+                    <a href="#">@Current.Name <span class="glyphicon @Current.NavCss"></span> <span class="badge badge-warning">@IfNot.IsComplete @Current.Incomplete @EndIf</span></a>
+
+                    @Partial['dash-topics', Current]
+
+                </li>
+                @EndEach
+            </ul>
+        </div>
+
+        <!-- Page Content -->
+        
+        <!-- -> loading -->
+        <div class="col-md-7 req-page text-center loading">
+            <h1 class="text-muted">
+                <span class="glyphicon glyphicon-refresh glyphicon-spin"></span>
+            </h1>
+        </div>
+
+        <!-- -> loaded -->
+        <div class="col-md-7 req-page" style="display:none">
+
+            @Each.Requirements
+            <div class="container-fluid req-wrapper card"  id="@Current.Id">
+                <div class="content">
+                    <div class="bread scroll-fade">
+                        @Current.BreadCrumbString
+                    </div>
+                    <div>
+                        <label>@Current.Name</label>
+                    </div>
+                    <div class="actions">
+                        <span class="glyphicon glyphicon-unchecked"></span> Done
+                    </div>
+                    <div class="expander scroll-fade">
+                        <span>More</span>
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </div>
+                    <div class="row extended">
+                        <div class="col-md-6">
+                            <button class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target=".modal-1">
+                                <span class="glyphicon glyphicon-book"></span>
+                                Legislation
+                            </button>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target=".modal-2">
+                                <span class="glyphicon glyphicon-list-alt"></span>
+                                Guidance
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @EndEach
+
+        </div>
+
+    </div>
+
+<!-- Modal 1 -->
+<div class="modal fade modal-1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Legislation</h4>
+            </div>
+            <div class="modal-body">                
+                @Partial['dash-legislation']
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 2 -->
+<div class="modal fade modal-2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Guidance</h4>
+            </div>
+            <div class="modal-body">
+                @Partial['dash-guidance']
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@EndSection
+
+@Section['Script']
+
+    <script type="text/javascript">
+
+        var onLeftNavAnimated = function () {
+
+            $(".req-page.loading").hide();
+
+            $(".req-page:not(.loading)").fadeIn(onContentDisplayed);
+        };
+
+        var onScroll = function (i) {
+            var scrollVar = $(window).scrollTop();
+
+            var threshTop = 250;
+            var threshBtm = 450;
+
+            var els = $(".req-wrapper .scroll-fade");
+            $.each(els, function (x) {
+                var top = $(this).offset().top;
+
+                var diff = top - scrollVar;
+                if (diff <= threshTop)
+                    $(this).css({ 'opacity': 1 });
+                else if (diff > threshBtm)
+                    $(this).css({ 'opacity': 0 });
+                else
+                    $(this).css({ 'opacity': 1 - ((diff - threshTop) / (threshBtm-threshTop)) });
+            });
+        };
+
+        var onContentDisplayed = function () {
+
+            $("body").scrollspy({
+                target: ".nav-container",
+                offset: 50
+            });
+
+            $(window).scroll(onScroll);
+            onScroll();
+
+            $(".req-wrapper .actions").on("click", function () {
+                var icon = $(this).find(".glyphicon");
+                if ($(this).hasClass("done"))
+                    icon.removeClass("glyphicon-check").addClass("glyphicon-unchecked");
+                else
+                    icon.removeClass("glyphicon-unchecked").addClass("glyphicon-check");
+
+                $(this).toggleClass("done");
+            });
+
+            $(".req-wrapper .expander").on("click", function () {
+                $(this).hide();
+
+                var wrapper = $(this).parents(".req-wrapper");
+
+                wrapper.animate({ height: 200 }, 20);
+                wrapper.find(".extended").show();
+            });
+        };
+
+        $(document).ready(function () {
+
+            // TODO: Fix this
+            //$(".nano").nanoScroller();
+
+            $("#side-nav").affix({
+                offset: {
+                    top:150,
+                    //top: $('#side-nav').offset().top - 20, // margin
+                    bottom: $('footer').outerHeight(true)
+                }
+            })
+            .css({ 'width': $('#side-nav').width() });
+
+            // Calculate empty space under side nav
+            var remaining = $(window).height() - $('#side-nav').offset().top - $('#side-nav').height() - 40;
+
+            // Expand first item
+            $('#side-nav li.level-1:first-child').addClass('active');
+
+            // Set inner scroll height + animate
+            $('#side-nav li.level-1 > .nano').css({ 'max-height': remaining }).hide().slideDown(onLeftNavAnimated);
+        });
+    </script>
+
+@EndSection
